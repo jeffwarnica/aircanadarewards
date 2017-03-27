@@ -1,8 +1,10 @@
 all: output.html
 
-aqs.csv: makeaqs.pl recentActivities.csv
-	./makeaqs.pl < recentActivities.csv > aqs.csv
+all.csv: preProcessor.pl recentActivities.csv
+	./preProcessor.pl < recentActivities.csv
+aqs.csv: preProcessor.pl recentActivities.csv
+	./preProcessor.pl < recentActivities.csv
 
-output.html: runme.gnuplot recentActivities.csv aqs.csv
+output.html: runme.gnuplot aqs.csv all.csv 
 	gnuplot runme.gnuplot
 
