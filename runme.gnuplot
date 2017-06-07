@@ -25,8 +25,8 @@ set arrow from "2017-01-01",second 0 to "2017-12-31",second 20000 nohead lt -1 l
 plot 'all.csv' using 1:4 smooth cumulative title "AQM Totals" lw 2 lc rgb "red" with steps, \
      'aqs.csv' using 1:(column(0))*1000 title "Segments" lw 2 lc rgb "blue" with steps, \
      'all.csv' using 1:4 title "Miles" lc rgb "red", \
-     'all.csv' using 1:5 title "AQD" axes x1y2 lc rgb "green" ,\
-     'all.csv' using 1:5 smooth cumulative title "AQD Totals" axes x1y2 lw 2 lc rgb "green" with steps , \
+     'aqd.csv' using 1:5 title "AQD" axes x1y2 lc rgb "green" ,\
+     'aqd.csv' using 1:5 smooth cumulative title "AQD Totals" axes x1y2 lw 2 lc rgb "green" with steps , \
      25000 title "Miles Req 25k" linetype 0, \
      35000 title "Miles Req 35k" linetype 0, \
      50000 title "Miles Req 50k" linetype 0, \
